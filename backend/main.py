@@ -91,6 +91,9 @@ class DoubtIn(BaseModel):
     doubt: str
     topic: str = ""
 
+@app.get("/")
+def home():
+    return {"message": "API is running successfully 🚀"}
 
 @app.get("/daily", response_model=LessonOut)
 async def get_daily_lesson(user=Depends(current_active_user)):
