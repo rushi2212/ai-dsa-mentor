@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+groq
+python-dotenv
+pydantic
+beanie               # ODM for MongoDB
+motor            # async MongoDB driver
+fastapi-users[beanie]  # or latest compatible version
+passlib[bcrypt]
+python-jose[cryptography]
