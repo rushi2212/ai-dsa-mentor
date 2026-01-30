@@ -7,13 +7,15 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem("token") || null);
   const [loading, setLoading] = useState(true);
+  // const url = "http://localhost:8000";
+  const url = "https://ai-dsa-mentor.onrender.com";
 
   useEffect(() => {
     if (token) {
       axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       // Optional: fetch user info
       axios
-        .get("http://localhost:8000/users/me", {
+        .get(`${url}/users/me`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setUser(res.data))
@@ -32,7 +34,7 @@ export function AuthProvider({ children }) {
       formData.append("password", password);
 
       const res = await axios.post(
-        "http://localhost:8000/auth/jwt/login",
+        `${url}/auth/jwt/login`,
         formData,
         { headers: { "Content-Type": "application/x-www-form-urlencoded" } },
       );
@@ -51,7 +53,7 @@ export function AuthProvider({ children }) {
 
   const register = async (email, password) => {
     try {
-      const res = await axios.post("http://localhost:8000/auth/register", {
+      const res = await axios.post(`${url}/auth/register`, {
         email,
         password,
       });
