@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import MCQQuiz from "../components/MCQQuiz";
 
-const API_BASE = "http://localhost:8000";
+// const API_BASE = "http://localhost:8000";
+const API_BASE = "https://ai-dsa-mentor.onrender.com";
 
 export default function PracticeQuizPage() {
   const { token, logout } = useAuth();
