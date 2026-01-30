@@ -11,8 +11,8 @@ async def connect_to_mongo():
     global client, db
     # mongodb_url = os.getenv(
     #     "MONGODB_URL", "mongodb://localhost:27017/ai_dsa_mentor")
-    mongodb_url = os.getenv(
-        "MONGODB_URL", "mongodb+srv://rushikesh220703_db_user:bG7T5gucCnDzVSj5@cluster0.k36tevp.mongodb.net/?appName=Cluster0")
+    mongodb_url = "mongodb+srv://rushikesh220703_db_user:t8ARik8yJQIwVJAr@cluster0.f4khxwf.mongodb.net/ai_dsa_mentor?retryWrites=true&w=majority&appName=Cluster0"
+
     client = AsyncIOMotorClient(mongodb_url)
     # Extract database name from URL or use default
     if "/" in mongodb_url and mongodb_url.split("/")[-1]:
