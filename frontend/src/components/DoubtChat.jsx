@@ -2,7 +2,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:8000';
+// const API_BASE = 'http://localhost:8000';
+const API_BASE = "https://ai-dsa-mentor.onrender.com";
 
 export default function DoubtChat({ currentTopic = '' }) {
   const [question, setQuestion] = useState('');
